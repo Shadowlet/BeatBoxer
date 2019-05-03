@@ -11,6 +11,7 @@ public class GameActivity extends AppCompatActivity {
     int screenWidth;
     int screenHeight;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
