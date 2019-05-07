@@ -133,11 +133,14 @@ public class ScreenActivity extends Activity {
             ourHolder = getHolder();
             paint = new Paint();
             //
+            Resourcer.Setup(getResources());
+            //
             Artist.Initialize(getWindowManager().getDefaultDisplay());
 
 
+            Artist.SetScreenSize(1800, 1080);
             // Artist.SetScreenSize(100, 100);
-            Artist.SetScreenSize(32);
+            // Artist.SetScreenSize(32);
 
 
 
@@ -179,9 +182,9 @@ public class ScreenActivity extends Activity {
 
         }
         public void Draw() {
-            canvas.drawColor(Color.BLACK);//the background
+            canvas.drawColor(Color.argb(255, 255, 0, 255));//the background
             //
-            paint.setColor(Color.argb(255, 255, 0, 255));
+            paint.setColor(Color.BLACK);
             Artist.drawRect(0, 0,
                     Artist.screenWidth, Artist.screenHeight);
             //
@@ -203,7 +206,7 @@ public class ScreenActivity extends Activity {
 
             paint.setColor(Color.argb(255, 255, 0, 0));
             paint.setTextSize(45);
-            canvas.drawText("xR:" + Artist.offsetX + " yR:" + Artist.offsetY + " fps:" + fps, 20, 40, paint);
+            canvas.drawText("xR:" + Artist.screenWidth + " yR:" + Artist.screenHeight + " fps:" + fps, 20, 40, paint);
         }
 
 
